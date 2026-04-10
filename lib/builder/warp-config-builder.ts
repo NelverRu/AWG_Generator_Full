@@ -23,11 +23,6 @@ export class WarpConfigBuilder {
       jmin: 23,
       jmax: 911,
     },
-    awg15: {
-      jc: 120,
-      jmin: 23,
-      jmax: 911,
-    },
   } as const;
 
   /**
@@ -63,7 +58,7 @@ export class WarpConfigBuilder {
       `PrivateKey = ${privateKey}`,
       `Address = ${clientIPv4}, ${clientIPv6}`,
       `DNS = ${dns}`,
-      `MTU = ${WarpConfigBuilder.DEFAULT_MTU}`,
+      `MTU = 1280`,
       'S1 = 0',
       'S2 = 0',
       `Jc = ${profile.jc}`,
