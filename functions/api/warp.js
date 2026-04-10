@@ -220,8 +220,7 @@ class WarpConfigBuilder {
   static DEVICE_PROFILES = {
     computer: { jc: 4, jmin: 40, jmax: 70 },
     phone: { jc: 120, jmin: 23, jmax: 911 },
-    awg15: { jc: 120, jmin: 23, jmax: 911 },
-  };
+ };
 
   static build(params) {
     const interfaceSection = this.buildInterfaceSection(params);
@@ -243,7 +242,7 @@ class WarpConfigBuilder {
       '[Interface]',
       `PrivateKey = ${privateKey}`,
       `Address = ${clientIPv4}, ${clientIPv6}`,
-      'DNS = 1.1.1.1, 2606:4700:4700::1111, 1.0.0.1, 2606:4700:4700::1001',
+      'DNS = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1111, 2606:4700:4700::1001',
       'MTU = 1280',
       'S1 = 0',
       'S2 = 0',
