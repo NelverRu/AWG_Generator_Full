@@ -30,9 +30,9 @@ export function WarpGenerator() {
   const [isLoading, setIsLoading] = useState(false)
   const [configData, setConfigData] = useState<{ configBase64: string; qrCodeBase64: string } | null>(null)
   const [selectedServices, setSelectedServices] = useState<string[]>([])
-  const [siteMode, setSiteMode] = useState<"all" | "specific">("all")
-  const [deviceType, setDeviceType] = useState<"computer" | "phone" | "awg15">("computer")
-  const [endPoint, setEndPoint] = useState<"default" | "default2" | "input">("default");
+  const [siteMode, setSiteMode] = useState<"all" | "specific">("all")        // ✅ Без изменений  
+  const [deviceType, setDeviceType] = useState<"computer" | "phone" | "awg15">("awg15") // ✅ Изменено  
+  const [endPoint, setEndPoint] = useState<"default" | "default2" | "input">("default2"); // ✅ Изменено  
   const [customEndpoint, setCustomEndpoint] = useState("");
   const [isGenerated, setIsGenerated] = useState(false)
   const [isConfigOpen, setIsConfigOpen] = useState(false)
