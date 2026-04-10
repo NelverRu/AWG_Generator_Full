@@ -159,25 +159,9 @@ export function ConfigOptions({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="computer">Оптимальный</SelectItem>
-              <SelectItem value="phone">Альтернативный</SelectItem>
               <SelectItem value="awg15">AmneziaWG 1.5</SelectItem>
             </SelectContent>
           </Select>
-
-          {/* Предупреждение для AmneziaWG 1.5 */}
-          {deviceType === "awg15" && (
-            <div className="mt-2 p-3 bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 rounded-md">
-              <div className="flex items-start gap-2">
-                <span className="text-orange-600 dark:text-orange-400 text-sm font-medium">⚠️</span>
-                <div className="text-sm text-orange-700 dark:text-orange-300">
-                  <p className="font-medium mb-1">AmneziaWG 1.5 - данный параметр позволяет использовать конфиг с AmneziaVPN.</p>
-                  <p>Импортируйте конфиг в приложение <strong>AmneziaVPN</strong>! Приложение <strong>AmneziaWG</strong> пока что не поддерживает этот формат!</p>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
 
         {/* Endpoint */}
         <div className="flex flex-col gap-1">
@@ -187,24 +171,10 @@ export function ConfigOptions({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="default">По умолчанию</SelectItem>
               <SelectItem value="default2">Альтернативный</SelectItem>
-              <SelectItem value="input">Указать свой адрес</SelectItem>
-            </SelectContent>
+              </SelectContent>
           </Select>
-
-          {/* Поле ввода - всегда видимое, но с разными состояниями */}
-          <Input
-            value={endPoint === "input" ? customEndpoint : getEndpointDisplayValue(endPoint)}
-            onChange={handleCustomEndpointChange}
-            placeholder={endPoint === "input" ? "Введите адрес сервера" : ""}
-            className="mt-2"
-            disabled={endPoint !== "input"}
-            readOnly={endPoint !== "input"}
-          />
-        </div>
-
-      </div>
+       </div>
     </div>
   );
 }
